@@ -25,6 +25,8 @@
 //NVIC_EN0_R   IRQ 0 to 31 Set Enable Register
 //NVIC_PRI7_R  IRQ 28 to 31 Priority Register
 
+uint32_t static toggle =1;
+
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
@@ -37,29 +39,48 @@ void SystemInit(){
 	SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 }
 
-void flashLights(uint8_t loops){
-	uint8_t i;
+void flashLights(){
+	if (toggle == 1){
+		  GPIO_PORTF_DATA_R |= GPIO_PIN_2;
+		toggle = 0;
+       //
+	// wait for specified time
+		   SysCtlDelay(MS_DELAY_500);
+		
+	} else {
+		GPIO_PORTF_DATA_R &= ~GPIO_PIN_2;
+		toggle = 1;
+		// wait for specified time
+		    SysCtlDelay(MS_DELAY_500);
+	}
+	/*uint8_t i;
 	for( i = 0; i < loops; i++){
 	       // Toggle the LED.
         //
         GPIO_PORTF_DATA_R |= GPIO_PIN_2;
        //
 	// wait for specified time
-		    SysCtlDelay(MS_DELAY_500);
+		   SysCtlDelay(MS_DELAY_500);
 		
 		 GPIO_PORTF_DATA_R &= ~GPIO_PIN_2;
 		
 		// wait for specified time
 		    SysCtlDelay(MS_DELAY_500);
-	}
+	}*/
 }
 
 void  GPIOPortF_Handler(){
 	 GPIO_PORTF_ICR_R = GPIO_PIN_4;   // acknowledge flag4
-	
+	/*if (GPIOPinRead(GPIO_PORTF_DATA_R, GPIO_PIN_4)){
+
+		
+	} else {
+
+		flashLights();
+	}*/
 	//toggle led
-	flashLights(3);
-	
+	SysCtlDelay(MS_DELAY_500);
+	flashLights();
 }
 
 void alternate_gpioInit(){
@@ -111,7 +132,7 @@ int main(){
 	
 	// init required gpio pins
 	gpioInit();
-	flashLights(3); // test LED's initially
+	flashLights(); // test LED's initially
 	
 	while ( 1 ) ; // wait for interrupts
 	

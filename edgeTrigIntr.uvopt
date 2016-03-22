@@ -150,7 +150,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>lmidk-agdi</Key>
-          <Name>-U0E2042B9 -O655 -S3 -FO31</Name>
+          <Name>-U0E218EDA -O655 -S3 -FO31</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -207,8 +207,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>256</TopLine>
-      <CurrentLine>265</CurrentLine>
+      <TopLine>604</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
       <FilenameWithoutPath>startup.s</FilenameWithoutPath>
@@ -221,10 +221,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>77</TopLine>
-      <CurrentLine>116</CurrentLine>
+      <TopLine>65</TopLine>
+      <CurrentLine>82</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\edgeTrigIntr.c</PathWithFileName>
       <FilenameWithoutPath>edgeTrigIntr.c</FilenameWithoutPath>
