@@ -30,8 +30,8 @@ void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
-long sr;
-long sr2;
+static int data[2];
+static uint32_t counter; 
 
 void SystemInit(){
 	// set system clock ( 4 Mhz )
@@ -59,17 +59,17 @@ void flashLights(uint8_t loops){
 }
 
 void  GPIOPortF_Handler(){
-	DisableInterrupts();
-	 GPIO_PORTF_ICR_R = GPIO_PIN_4;   // acknowledge flag4
+	//DisableInterrupts();
+	GPIO_PORTF_ICR_R = GPIO_PIN_4;   // acknowledge flag4
 	
 	//toggle led
 	
-	flashLights(1);
+	
 	SysCtlDelay(MS_DELAY_500);
-	EnableInterrupts();
-	SysCtlDelay(MS_DELAY_500);
-	SysCtlDelay(MS_DELAY_500);
-	SysCtlDelay(MS_DELAY_500);
+	
+	counter++;
+	data[0]= counter;
+	data[1] = counter;
 }
 
 
@@ -97,11 +97,20 @@ void gpioInit(){ uint32_t fallingedges;
 }
 
 int main(){
-	
+	int var0,var1;
+
 	// init required gpio pins
 	gpioInit();
 	flashLights(1); // test LED's initially
+		while (true) {
+		var0 = data[0];
+		var1 = data[1];
 	
-	while ( 1 ) ; // wait for interrupts
+	if (var0 != var1){
+		flashLights(8);
+	}
+}
+	
+	//while ( 1 ) ; // wait for interrupts
 	
 }
