@@ -41,17 +41,19 @@ void SystemInit(){
 
 void flashLights(){
 	if (toggle == 1){
+		DisableInterrupts();
+		SysCtlDelay(MS_DELAY_500);
 		  GPIO_PORTF_DATA_R |= GPIO_PIN_2;
 		toggle = 0;
+		EnableInterrupts();
        //
-	// wait for specified time
-		   SysCtlDelay(MS_DELAY_500);
 		
 	} else {
+		DisableInterrupts();
+		SysCtlDelay(MS_DELAY_500);
 		GPIO_PORTF_DATA_R &= ~GPIO_PIN_2;
 		toggle = 1;
-		// wait for specified time
-		    SysCtlDelay(MS_DELAY_500);
+		EnableInterrupts();
 	}
 	/*uint8_t i;
 	for( i = 0; i < loops; i++){
@@ -105,7 +107,8 @@ void alternate_gpioInit(){
     GPIO_PORTF_DEN_R |= GPIO_PIN_2;
 }
 	
-void gpioInit(){ uint32_t fallingedges;
+void gpioInit(){ 
+	uint32_t fallingedges;
 	
 	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOF;
 	fallingedges = 0;  // short wait
@@ -120,7 +123,7 @@ void gpioInit(){ uint32_t fallingedges;
 	GPIO_PORTF_PUR_R |= GPIO_PIN_4;     //  enable weak pull-up on PF4
   GPIO_PORTF_IS_R &= ~GPIO_PIN_4;     //  PF4 is edge-sensitive
   GPIO_PORTF_IBE_R &= ~GPIO_PIN_4;    //  PF4 is not both edges
-  GPIO_PORTF_IEV_R |= GPIO_PIN_4;     // PF4 rising edge event
+  GPIO_PORTF_IEV_R |= GPIO_PIN_4;     // PF4 rising edge event 
   GPIO_PORTF_ICR_R = GPIO_PIN_4;      //  clear flag0
   GPIO_PORTF_IM_R |= GPIO_PIN_4;      //  arm interrupt on PF4
   NVIC_PRI7_R = (NVIC_PRI7_R&0xFF00FFFF)|0x00A00000; // (g) priority 5
@@ -132,7 +135,7 @@ int main(){
 	
 	// init required gpio pins
 	gpioInit();
-	flashLights(); // test LED's initially
+	//flashLights(); // test LED's initially
 	
 	while ( 1 ) ; // wait for interrupts
 	

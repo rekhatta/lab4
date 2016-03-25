@@ -17,11 +17,11 @@ Section Cross References
     edgetrigintr.o(i.alternate_gpioInit) refers to gpio.o(i.GPIOIntTypeSet) for GPIOIntTypeSet
     edgetrigintr.o(i.alternate_gpioInit) refers to gpio.o(i.GPIOIntEnable) for GPIOIntEnable
     edgetrigintr.o(i.alternate_gpioInit) refers to edgetrigintr.o(i.GPIOPortF_Handler) for GPIOPortF_Handler
+    edgetrigintr.o(i.flashLights) refers to startup.o(.text) for DisableInterrupts
     edgetrigintr.o(i.flashLights) refers to sysctl.o(.emb_text) for SysCtlDelay
     edgetrigintr.o(i.flashLights) refers to edgetrigintr.o(.data) for toggle
     edgetrigintr.o(i.gpioInit) refers to startup.o(.text) for EnableInterrupts
     edgetrigintr.o(i.main) refers to edgetrigintr.o(i.gpioInit) for gpioInit
-    edgetrigintr.o(i.main) refers to edgetrigintr.o(i.flashLights) for flashLights
     gpio.o(i.GPIOIntNumberGet) refers to gpio.o(.constdata) for g_ppui32GPIOIntMapBlizzard
     gpio.o(i.GPIOIntRegister) refers to gpio.o(i.GPIOIntNumberGet) for GPIOIntNumberGet
     gpio.o(i.GPIOIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
@@ -413,8 +413,8 @@ Image Symbol Table
     i.__scatterload_null                     0x0000031a   Section        2  handlers.o(i.__scatterload_null)
     i.__scatterload_zeroinit                 0x0000031c   Section       14  handlers.o(i.__scatterload_zeroinit)
     i.flashLights                            0x0000032c   Section        0  edgetrigintr.o(i.flashLights)
-    i.gpioInit                               0x00000384   Section        0  edgetrigintr.o(i.gpioInit)
-    i.main                                   0x0000049c   Section        0  edgetrigintr.o(i.main)
+    i.gpioInit                               0x00000394   Section        0  edgetrigintr.o(i.gpioInit)
+    i.main                                   0x000004ac   Section        0  edgetrigintr.o(i.main)
     .data                                    0x20000000   Section        4  edgetrigintr.o(.data)
     toggle                                   0x20000000   Data           4  edgetrigintr.o(.data)
     STACK                                    0x20000008   Section     1024  startup.o(STACK)
@@ -576,11 +576,11 @@ Image Symbol Table
     __scatterload_copy                       0x0000030d   Thumb Code    14  handlers.o(i.__scatterload_copy)
     __scatterload_null                       0x0000031b   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x0000031d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    flashLights                              0x0000032d   Thumb Code    70  edgetrigintr.o(i.flashLights)
-    gpioInit                                 0x00000385   Thumb Code   218  edgetrigintr.o(i.gpioInit)
-    main                                     0x0000049d   Thumb Code    12  edgetrigintr.o(i.main)
-    Region$$Table$$Base                      0x000004a8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000004c8   Number         0  anon$$obj.o(Region$$Table)
+    flashLights                              0x0000032d   Thumb Code    86  edgetrigintr.o(i.flashLights)
+    gpioInit                                 0x00000395   Thumb Code   218  edgetrigintr.o(i.gpioInit)
+    main                                     0x000004ad   Thumb Code     8  edgetrigintr.o(i.main)
+    Region$$Table$$Base                      0x000004b4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000004d4   Number         0  anon$$obj.o(Region$$Table)
     __initial_sp                             0x20000408   Data           0  startup.o(STACK)
 
 
@@ -591,9 +591,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000004cc, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000004d8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000004c8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000004d4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -616,10 +616,10 @@ Memory Map of the image
     0x0000031a   0x00000002   Code   RO         1354    i.__scatterload_null  mc_w.l(handlers.o)
     0x0000031c   0x0000000e   Code   RO         1355    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0000032a   0x00000002   PAD
-    0x0000032c   0x00000058   Code   RO           15    i.flashLights       edgetrigintr.o
-    0x00000384   0x00000118   Code   RO           16    i.gpioInit          edgetrigintr.o
-    0x0000049c   0x0000000c   Code   RO           17    i.main              edgetrigintr.o
-    0x000004a8   0x00000020   Data   RO         1351    Region$$Table       anon$$obj.o
+    0x0000032c   0x00000068   Code   RO           15    i.flashLights       edgetrigintr.o
+    0x00000394   0x00000118   Code   RO           16    i.gpioInit          edgetrigintr.o
+    0x000004ac   0x00000008   Code   RO           17    i.main              edgetrigintr.o
+    0x000004b4   0x00000020   Data   RO         1351    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
@@ -644,12 +644,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       408         88          0          4          0       6232   edgetrigintr.o
+       420         88          0          4          0       6240   edgetrigintr.o
        688        622          0          0       1024        944   startup.o
          6          0          0          0          0        340   sysctl.o
 
     ----------------------------------------------------------------------
-      1104        710         32          4       1028       7516   Object Totals
+      1116        710         32          4       1028       7524   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          0          4          0   (incl. Padding)
 
@@ -688,15 +688,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1192        726         32          4       1028       7184   Grand Totals
-      1192        726         32          4       1028       7184   ELF Image Totals
-      1192        726         32          4          0          0   ROM Totals
+      1204        726         32          4       1028       7192   Grand Totals
+      1204        726         32          4       1028       7192   ELF Image Totals
+      1204        726         32          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1224 (   1.20kB)
+    Total RO  Size (Code + RO Data)                 1236 (   1.21kB)
     Total RW  Size (RW Data + ZI Data)              1032 (   1.01kB)
-    Total ROM Size (Code + RO Data + RW Data)       1228 (   1.20kB)
+    Total ROM Size (Code + RO Data + RW Data)       1240 (   1.21kB)
 
 ==============================================================================
 
