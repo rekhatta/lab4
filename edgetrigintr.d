@@ -1,0 +1,12 @@
+.\edgetrigintr.o: edgeTrigIntr.c
+.\edgetrigintr.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\edgetrigintr.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\edgetrigintr.o: inc/hw_memmap.h
+.\edgetrigintr.o: driverlib/adc.h
+.\edgetrigintr.o: driverlib/gpio.h
+.\edgetrigintr.o: driverlib/pin_map.h
+.\edgetrigintr.o: driverlib/sysctl.h
+.\edgetrigintr.o: driverlib/uart.h
+.\edgetrigintr.o: utils/uartstdio.h
+.\edgetrigintr.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\edgetrigintr.o: inc/tm4c123gh6pm.h

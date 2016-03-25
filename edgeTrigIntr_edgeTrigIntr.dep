@@ -1,0 +1,86 @@
+Dependencies for Project 'edgeTrigIntr', Target 'edgeTrigIntr': (DO NOT MODIFY !)
+F (.\startup.s)(0x56F568CF)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\edgeTrigIntr.c)(0x56F56EBE)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\edgetrigintr.o --omf_browse .\edgetrigintr.crf --depend .\edgetrigintr.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (inc/hw_memmap.h)(0x56F568D0)
+I (driverlib/adc.h)(0x56F568CF)
+I (driverlib/gpio.h)(0x56F568D0)
+I (driverlib/pin_map.h)(0x56F568D0)
+I (driverlib/sysctl.h)(0x56F568D0)
+I (driverlib/uart.h)(0x56F568D0)
+I (utils/uartstdio.h)(0x56F568D0)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C86E14)
+I (inc/tm4c123gh6pm.h)(0x56F568D0)
+F (.\driverlib\gpio.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../inc/hw_gpio.h)(0x56F568D0)
+I (driverlib\../inc/hw_ints.h)(0x56F568D0)
+I (driverlib\../inc/hw_memmap.h)(0x56F568D0)
+I (driverlib\../inc/hw_sysctl.h)(0x56F568D0)
+I (driverlib\../inc/hw_types.h)(0x56F568D0)
+I (driverlib\../driverlib/debug.h)(0x56F568D0)
+I (driverlib\../driverlib/gpio.h)(0x56F568D0)
+I (driverlib\../driverlib/interrupt.h)(0x56F568D0)
+F (.\driverlib\sysctl.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\sysctl.o --omf_browse .\sysctl.crf --depend .\sysctl.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../inc/hw_ints.h)(0x56F568D0)
+I (driverlib\../inc/hw_nvic.h)(0x56F568D0)
+I (driverlib\../inc/hw_sysctl.h)(0x56F568D0)
+I (driverlib\../inc/hw_types.h)(0x56F568D0)
+I (driverlib\../inc/hw_flash.h)(0x56F568D0)
+I (driverlib\../driverlib/cpu.h)(0x56F568D0)
+I (driverlib\../driverlib/debug.h)(0x56F568D0)
+I (driverlib\../driverlib/interrupt.h)(0x56F568D0)
+I (driverlib\../driverlib/sysctl.h)(0x56F568D0)
+F (.\driverlib\uart.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../inc/hw_ints.h)(0x56F568D0)
+I (driverlib\../inc/hw_memmap.h)(0x56F568D0)
+I (driverlib\../inc/hw_sysctl.h)(0x56F568D0)
+I (driverlib\../inc/hw_types.h)(0x56F568D0)
+I (driverlib\../inc/hw_uart.h)(0x56F568D0)
+I (driverlib\../driverlib/debug.h)(0x56F568D0)
+I (driverlib\../driverlib/interrupt.h)(0x56F568D0)
+I (driverlib\../driverlib/uart.h)(0x56F568D0)
+F (.\driverlib\adc.c)(0x56F568CF)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\adc.o --omf_browse .\adc.crf --depend .\adc.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../inc/hw_adc.h)(0x56F568D0)
+I (driverlib\../inc/hw_ints.h)(0x56F568D0)
+I (driverlib\../inc/hw_memmap.h)(0x56F568D0)
+I (driverlib\../inc/hw_types.h)(0x56F568D0)
+I (driverlib\../inc/hw_sysctl.h)(0x56F568D0)
+I (driverlib\../driverlib/adc.h)(0x56F568CF)
+I (driverlib\../driverlib/debug.h)(0x56F568D0)
+I (driverlib\../driverlib/interrupt.h)(0x56F568D0)
+F (.\driverlib\interrupt.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\interrupt.o --omf_browse .\interrupt.crf --depend .\interrupt.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../inc/hw_ints.h)(0x56F568D0)
+I (driverlib\../inc/hw_nvic.h)(0x56F568D0)
+I (driverlib\../inc/hw_types.h)(0x56F568D0)
+I (driverlib\../driverlib/cpu.h)(0x56F568D0)
+I (driverlib\../driverlib/debug.h)(0x56F568D0)
+I (driverlib\../driverlib/interrupt.h)(0x56F568D0)
+F (.\driverlib\cpu.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\cpu.o --omf_browse .\cpu.crf --depend .\cpu.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (driverlib\../driverlib/cpu.h)(0x56F568D0)
+F (.\utils\uartstdio.c)(0x56F568D0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-Drvmdk -DPART_LM4F120H5QR -DTM4C123GH6PM-o .\uartstdio.o --omf_browse .\uartstdio.crf --depend .\uartstdio.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdarg.h)(0x51C86E14)
+I (utils\../inc/hw_ints.h)(0x56F568D0)
+I (utils\../inc/hw_memmap.h)(0x56F568D0)
+I (utils\../inc/hw_types.h)(0x56F568D0)
+I (utils\../inc/hw_uart.h)(0x56F568D0)
+I (utils\../driverlib/debug.h)(0x56F568D0)
+I (utils\../driverlib/interrupt.h)(0x56F568D0)
+I (utils\../driverlib/rom.h)(0x56F568D0)
+I (utils\../driverlib/rom_map.h)(0x56F568D0)
+I (utils\../driverlib/sysctl.h)(0x56F568D0)
+I (utils\../driverlib/uart.h)(0x56F568D0)
+I (utils\../utils/uartstdio.h)(0x56F568D0)
